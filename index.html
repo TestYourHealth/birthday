@@ -3,575 +3,281 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Birthdayflix</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <meta
+      name="description"
+      content="A premium birthday tribute page honouring Dr. Anup Rastogi."
+    />
+    <title>Happy Birthday | Dr. Anup Rastogi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <style>
-      :root {
-        --bg: #141414;
-        --muted: #b3b3b3;
-        --accent: #e50914;
-        --card-radius: 8px;
-        --gap: 16px;
-        --max-width: 1200px;
-      }
-      * {
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        height: 100%;
-      }
-      body {
-        margin: 0;
-        font-family: "Roboto", system-ui, -apple-system, "Segoe UI",
-          "Helvetica Neue", Arial;
-        background: var(--bg);
-        color: #fff;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        line-height: 1.35;
-      }
-
-      /* NAVBAR */
-      .nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 68px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 12px 32px;
-        z-index: 50;
-        background: linear-gradient(
-          180deg,
-          rgba(20, 20, 20, 0.95) 0%,
-          rgba(20, 20, 20, 0.6) 60%,
-          rgba(20, 20, 20, 0) 100%
-        );
-        backdrop-filter: blur(6px);
-      }
-      .nav .left {
-        display: flex;
-        align-items: center;
-        gap: 24px;
-      }
-      .logo {
-        font-weight: 400;
-        color: var(--accent);
-        font-family: "Bebas Neue", sans-serif;
-        letter-spacing: 0.15em;
-        font-size: 36px;
-      }
-      .nav a {
-        color: var(--muted);
-        text-decoration: none;
-        font-size: 14px;
-        transition: color 0.3s;
-      }
-      .nav a:hover {
-        color: #fff;
-      }
-      .nav .actions {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-      .btn {
-        background: transparent;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        padding: 8px 14px;
-        border-radius: 4px;
-        color: #fff;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s;
-      }
-      .btn:hover {
-        background: rgba(255, 255, 255, 0.1);
-      }
-      .btn.primary {
-        background: var(--accent);
-        border: none;
-      }
-      .btn.primary:hover {
-        background: #f40612;
-      }
-
-      /* HERO */
-      .hero {
-        height: 70vh;
-        min-height: 500px;
-
-        position: relative;
-        display: flex;
-        align-items: center;
-        padding: 48px 6vw;
-        color: #fff;
-        overflow: hidden;
-        margin-top: 68px;
-      }
-      .hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image: url("https://iili.io/KDr4mJV.jpg");
-        width: 50%;
-        left: 600px;
-        background-size: cover;
-        background-position: 75% center;
-        background-repeat: no-repeat;
-        z-index: -2;
-        filter: contrast(1.1) saturate(1.15) brightness(0.75);
-      }
-      .hero::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-            90deg,
-            rgba(20, 20, 20, 1) 0%,
-            rgba(20, 20, 20, 0.95) 25%,
-            rgba(20, 20, 20, 0.8) 45%,
-            rgba(20, 20, 20, 0.5) 65%,
-            rgba(20, 20, 20, 0.2) 85%,
-            rgba(20, 20, 20, 0) 100%
-          ),
-          linear-gradient(
-            180deg,
-            rgba(20, 20, 20, 0.3) 0%,
-            rgba(20, 20, 20, 0) 50%,
-            rgba(20, 20, 20, 0.5) 100%
-          );
-        z-index: -1;
-      }
-      .hero .hero-inner {
-        max-width: var(--max-width);
-        margin: 0 auto;
-        display: flex;
-        gap: 48px;
-        align-items: center;
-        justify-content: flex-start;
-        width: 100%;
-      }
-      .hero .info {
-        max-width: 600px;
-        flex: 1;
-        z-index: 2;
-      }
-      .hero h1 {
-        font-size: 56px;
-        margin: 0 0 16px;
-        font-family: "Bebas Neue", sans-serif;
-        letter-spacing: 0.05em;
-        line-height: 1.1;
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-      }
-      .hero p {
-        color: #e5e5e5;
-        margin: 0 0 24px;
-        font-size: 18px;
-        line-height: 1.6;
-        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-      }
-      .cta {
-        display: flex;
-        gap: 12px;
-      }
-      .cta .btn {
-        font-size: 16px;
-        padding: 12px 24px;
-      }
-
-      /* ROWS */
-      .container {
-        max-width: var(--max-width);
-        margin: 48px auto;
-        padding: 0 6vw;
-      }
-      .row {
-        margin: 32px 0;
-      }
-      .row h3 {
-        margin: 0 0 16px;
-        font-size: 24px;
-        font-weight: 700;
-      }
-      .carousel {
-        position: relative;
-      }
-      .track {
-        display: flex;
-        gap: 12px;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        padding-bottom: 8px;
-        padding-left: 4px;
-        padding-right: 4px;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-      }
-      .track::-webkit-scrollbar {
-        display: none;
-      }
-      .card {
-        min-width: 180px;
-        flex: 0 0 180px;
-        border-radius: var(--card-radius);
-        overflow: hidden;
-        position: relative;
-        background: #222;
-        cursor: pointer;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-      .card img {
-        width: 100%;
-        height: 270px;
-        object-fit: cover;
-        display: block;
-      }
-      .card:hover {
-        transform: translateY(-12px) scale(1.05);
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
-        z-index: 10;
-      }
-      .card .meta {
-        padding: 10px 12px;
-        font-size: 14px;
-        color: var(--muted);
-        background: rgba(0, 0, 0, 0.6);
-      }
-
-      .nav-arrow {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 48px;
-        height: 100%;
-        border-radius: 0;
-        background: rgba(20, 20, 20, 0.7);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        z-index: 10;
-        opacity: 0;
-        transition: opacity 0.3s;
-        font-size: 32px;
-        color: #fff;
-      }
-      .carousel:hover .nav-arrow {
-        opacity: 1;
-      }
-      .nav-arrow:hover {
-        background: rgba(20, 20, 20, 0.9);
-      }
-      .nav-arrow.left {
-        left: 0;
-      }
-      .nav-arrow.right {
-        right: 0;
-      }
-
-      /* VIDEO PLAYER */
-      .player-container {
-        width: 100%;
-        max-width: 900px;
-        background: #000;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-        margin: 48px auto;
-      }
-
-      .video-wrapper {
-        position: relative;
-        width: 100%;
-        aspect-ratio: 16/9;
-        background: #000;
-      }
-
-      .video-wrapper iframe {
-        width: 100%;
-        height: 100%;
-        display: block;
-        border: none;
-      }
-
-      .video-info {
-        padding: 20px;
-        background: rgba(0, 0, 0, 0.5);
-      }
-
-      .video-info h4 {
-        margin: 0 0 10px;
-        color: #fff;
-        font-size: 20px;
-      }
-
-      .video-info p {
-        margin: 0;
-        color: var(--muted);
-        font-size: 14px;
-      }
-
-      /* large featured card for hover on desktop */
-      @media (min-width: 1000px) {
-        .card {
-          min-width: 220px;
-          flex: 0 0 220px;
-        }
-        .card img {
-          height: 330px;
-        }
-      }
-
-      /* responsive tweaks */
-      @media (max-width: 768px) {
-        .nav {
-          padding: 10px 20px;
-        }
-        .nav .links {
-          display: none;
-        }
-        .logo {
-          font-size: 28px;
-        }
-        .hero {
-          height: 60vh;
-          padding: 32px 20px;
-          margin-top: 68px;
-        }
-        .hero h1 {
-          font-size: 36px;
-        }
-        .hero p {
-          font-size: 16px;
-        }
-        .cta .btn {
-          font-size: 14px;
-          padding: 10px 18px;
-        }
-        .row h3 {
-          font-size: 20px;
-        }
-        .card {
-          min-width: 140px;
-          flex: 0 0 140px;
-        }
-        .card img {
-          height: 210px;
-        }
-        .nav-arrow {
-          display: none;
-        }
-      }
-
-      /* Small utilities */
-      .muted {
-        color: var(--muted);
-      }
-      .spacer {
-        height: 40px;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="nav">
-      <div class="left">
-        <div class="logo">Birthdayflix</div>
-        <nav class="links" aria-label="primary">
-          <a href="#">Home</a>
-          <a href="#">TV Shows</a>
-          <a href="#">Movies</a>
-          <a href="#">New & Popular</a>
-          <a href="#">My List</a>
+    <header class="topbar">
+      <div class="container nav-shell">
+        <div class="brand-wrap" aria-label="Birthday tribute brand">
+          <span class="brand-mark">B</span>
+          <span class="brand-text">Birthday Tribute</span>
+        </div>
+
+        <nav class="main-nav" aria-label="Primary navigation">
+          <a href="#home">Home</a>
+          <a href="#tribute">Tribute</a>
+          <a href="#moments">Moments</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#wishes">Wishes</a>
         </nav>
-      </div>
-      <div class="actions">
-        <button class="btn">Children</button>
-        <button class="btn">Browse</button>
-        <button class="btn primary">Sign In</button>
+
+        <button class="action-button" type="button">Celebrate</button>
       </div>
     </header>
 
     <main>
-      <section class="hero" aria-label="featured">
-        <div class="hero-inner">
-          <div class="info">
-            <h1>Happy Birthday<br />Dr. Anup Rastogi</h1>
-            <p>
-              Your leadership is a beacon of inspiration for us all. May your
-              day be as exceptional as you are.
+      <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">A celebration of legacy, warmth & excellence</p>
+            <h1>
+              Happy Birthday<br />
+              <span>Dr. Anup Rastogi</span>
+            </h1>
+            <p class="lead">
+              Your leadership is a beacon of inspiration for everyone around you.
+              May this new chapter be filled with health, happiness, purpose, and
+              countless meaningful moments.
             </p>
-            <div class="cta">
-              <button class="btn primary" id="playBtn">▶ Play</button>
-              <button class="btn">ⓘ More Info</button>
+
+            <div class="cta-row">
+              <button class="primary-btn" id="playBtn" type="button">
+                ▶ Play Tribute
+              </button>
+              <a class="secondary-btn" href="#wishes">Send Wishes</a>
+            </div>
+
+            <div class="stats" aria-label="Birthday tribute highlights">
+              <div class="stat-card">
+                <strong>Years</strong>
+                <span>of wisdom</span>
+              </div>
+              <div class="stat-card">
+                <strong>Smiles</strong>
+                <span>shared</span>
+              </div>
+              <div class="stat-card">
+                <strong>Legacy</strong>
+                <span>of inspiration</span>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section class="container">
-        <div class="row">
-          <h3>Trending Now</h3>
-          <div class="carousel" data-row>
-            <div class="nav-arrow left" aria-hidden="true">❮</div>
-            <div class="track">
-              <div class="card">
-                <img src="https://iili.io/KDr4p5B.jpg" alt="poster 1" />
-              </div>
-              <div class="card">
-                <img src="https://iili.io/KDr69b1.jpg" alt="poster 2" />
-              </div>
-              <div class="card">
-                <img src="https://iili.io/KDr4yOP.jpg" alt="poster 3" />
-              </div>
-              <div class="card">
-                <img src="https://iili.io/KDr69b1.jpg" alt="poster 4" />
-              </div>
-              <div class="card">
-                <img src="https://iili.io/KDr4mJV.jpg" alt="poster 5" />
-              </div>
-              <div class="card">
-                <img src="https://iili.io/KDr4DUQ.jpg" alt="poster 6" />
-              </div>
-              <div class="card">
-                <img src="https://iili.io/KDr4t0x.jpg" alt="poster 7" />
-              </div>
-            </div>
-            <div class="nav-arrow right" aria-hidden="true">❯</div>
-          </div>
-        </div>
-
-        <div class="player-container">
-          <div class="video-wrapper">
-            <video
-              id="birthdayVideo"
-              controls
-              preload="metadata"
-              style="width: 100%; height: 100%; object-fit: contain"
-            >
-              <source
-                src="Happy Birthday (20th Century Fox Style).mp4"
-                type="video/mp4"
+          <div class="hero-visual" aria-label="Birthday portrait card">
+            <div class="portrait-card">
+              <img
+                src="https://iili.io/KDr4mJV.jpg"
+                alt="Birthday tribute portrait for Dr. Anup Rastogi"
               />
-            </video>
-          </div>
-          <div class="video-info">
-            <h4>Birthday Celebration Video</h4>
-            <p>Special tribute for Dr. Anup Rastogi • Full HD Quality</p>
+              <div class="portrait-badge">
+                <span class="badge-label">Special Day</span>
+                <strong>With love & gratitude</strong>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <div class="spacer"></div>
+      <section class="section tribute" id="tribute">
+        <div class="container split-layout">
+          <div class="section-copy">
+            <p class="section-label">A tribute</p>
+            <h2>Honouring a life defined by excellence and compassion.</h2>
+            <p>
+              Dr. Anup Rastogi has inspired countless people through leadership,
+              integrity, and a deep commitment to making a difference. This day is
+              a celebration of the impact, strength, and generosity that define you.
+            </p>
+            <p>
+              May your horizons expand, your purpose deepen, and your days be filled
+              with joy, balance, and moments that remind you how deeply you are valued.
+            </p>
+          </div>
+
+          <div class="feature-grid" aria-label="Birthday highlights">
+            <article class="info-card accent-card">
+              <span class="card-number">01</span>
+              <h3>Leadership</h3>
+              <p>Guiding with clarity, confidence, and steady vision.</p>
+            </article>
+            <article class="info-card">
+              <span class="card-number">02</span>
+              <h3>Warmth</h3>
+              <p>Bringing people together through kindness and sincerity.</p>
+            </article>
+            <article class="info-card">
+              <span class="card-number">03</span>
+              <h3>Inspiration</h3>
+              <p>Leaving a lasting example of purpose and excellence.</p>
+            </article>
+            <article class="info-card">
+              <span class="card-number">04</span>
+              <h3>Joy</h3>
+              <p>Celebrating life with grace, laughter, and optimism.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section moments" id="moments">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-label">Featured moments</p>
+            <h2>Memories worth revisiting.</h2>
+          </div>
+
+          <div class="carousel" data-row>
+            <button class="nav-arrow left" type="button" aria-label="Previous slides">❮</button>
+            <div class="track" aria-live="polite">
+              <article class="poster-card">
+                <img src="https://iili.io/KDr4p5B.jpg" alt="Birthday moment one" />
+                <div class="poster-meta">Celebration</div>
+              </article>
+              <article class="poster-card">
+                <img src="https://iili.io/KDr69b1.jpg" alt="Birthday moment two" />
+                <div class="poster-meta">Inspiration</div>
+              </article>
+              <article class="poster-card">
+                <img src="https://iili.io/KDr4yOP.jpg" alt="Birthday moment three" />
+                <div class="poster-meta">Joy</div>
+              </article>
+              <article class="poster-card">
+                <img src="https://iili.io/KDr4DUQ.jpg" alt="Birthday moment four" />
+                <div class="poster-meta">A legacy</div>
+              </article>
+              <article class="poster-card">
+                <img src="https://iili.io/KDr4t0x.jpg" alt="Birthday moment five" />
+                <div class="poster-meta">Moments</div>
+              </article>
+            </div>
+            <button class="nav-arrow right" type="button" aria-label="Next slides">❯</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section gallery" id="gallery">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-label">Gallery</p>
+            <h2>Moments captured in light.</h2>
+          </div>
+
+          <div class="gallery-grid">
+            <figure class="gallery-item tall">
+              <img src="https://iili.io/KDr4mJV.jpg" alt="Gallery image 1" />
+            </figure>
+            <figure class="gallery-item">
+              <img src="https://iili.io/KDr69b1.jpg" alt="Gallery image 2" />
+            </figure>
+            <figure class="gallery-item">
+              <img src="https://iili.io/KDr4yOP.jpg" alt="Gallery image 3" />
+            </figure>
+            <figure class="gallery-item wide">
+              <img src="https://iili.io/KDr4p5B.jpg" alt="Gallery image 4" />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section video-section" id="video">
+        <div class="container video-layout">
+          <div class="video-shell">
+            <div class="video-frame">
+              <video
+                id="birthdayVideo"
+                controls
+                preload="metadata"
+                poster="https://iili.io/KDr4mJV.jpg"
+              >
+                <source
+                  src="Happy Birthday (20th Century Fox Style).mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+          <div class="video-copy">
+            <p class="section-label">Birthday video</p>
+            <h2>A heartfelt tribute, beautifully captured.</h2>
+            <p>
+              This special video celebrates the spirit, warmth, and achievements that
+              make this day so meaningful. May it remind you how deeply admired and
+              cherished you are.
+            </p>
+            <div class="mini-list">
+              <span>Warm wishes</span>
+              <span>Good health</span>
+              <span>Abundant joy</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section wishes" id="wishes">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-label">Messages</p>
+            <h2>Wishes for a remarkable year ahead.</h2>
+          </div>
+
+          <div class="wish-grid">
+            <article class="wish-card">
+              <p>
+                “May your year ahead be filled with courage, clarity, and new
+                opportunities that bring you even greater joy.”
+              </p>
+              <span>With love</span>
+            </article>
+            <article class="wish-card">
+              <p>
+                “Your presence uplifts everyone around you. May your birthday be as
+                inspiring and beautiful as the life you lead.”
+              </p>
+              <span>Warm regards</span>
+            </article>
+            <article class="wish-card">
+              <p>
+                “Here’s to health, happiness, and meaningful milestones in the year
+                to come. You deserve the very best.”
+              </p>
+              <span>Always</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section cta-banner" id="celebrate">
+        <div class="container cta-shell">
+          <div>
+            <p class="section-label">A special day</p>
+            <h2>May this birthday bring you joy, peace, and unforgettable memories.</h2>
+          </div>
+          <a class="primary-btn" href="mailto:hello@example.com?subject=Happy%20Birthday%20Dr.%20Anup%20Rastogi">Send Your Wish</a>
+        </div>
+      </section>
     </main>
 
-    <script>
-      // Simple carousel scrolling with arrows + mouse drag support
-      document.querySelectorAll(".carousel").forEach(function (car) {
-        const track = car.querySelector(".track");
-        const left = car.querySelector(".nav-arrow.left");
-        const right = car.querySelector(".nav-arrow.right");
-        const cardWidth = () =>
-          track.querySelector(".card")
-            ? track.querySelector(".card").getBoundingClientRect().width + 12
-            : 200;
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>Made with love and gratitude.</p>
+        <p>Happy Birthday, Dr. Anup Rastogi</p>
+      </div>
+    </footer>
 
-        left.addEventListener("click", () => {
-          track.scrollBy({ left: -cardWidth() * 3, behavior: "smooth" });
-        });
-        right.addEventListener("click", () => {
-          track.scrollBy({ left: cardWidth() * 3, behavior: "smooth" });
-        });
-
-        // mouse drag to scroll
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-        track.addEventListener("mousedown", (e) => {
-          isDown = true;
-          track.classList.add("dragging");
-          startX = e.pageX - track.offsetLeft;
-          scrollLeft = track.scrollLeft;
-          track.style.cursor = "grabbing";
-        });
-        window.addEventListener("mouseup", () => {
-          isDown = false;
-          track.classList.remove("dragging");
-          track.style.cursor = "grab";
-        });
-        track.addEventListener("mousemove", (e) => {
-          if (!isDown) return;
-          e.preventDefault();
-          const x = e.pageX - track.offsetLeft;
-          const walk = (x - startX) * 1.5;
-          track.scrollLeft = scrollLeft - walk;
-        });
-
-        // touch support
-        let touchStartX = 0,
-          touchStartScroll = 0;
-        track.addEventListener("touchstart", (e) => {
-          touchStartX = e.touches[0].pageX;
-          touchStartScroll = track.scrollLeft;
-        });
-        track.addEventListener("touchmove", (e) => {
-          const x = e.touches[0].pageX;
-          const walk = x - touchStartX;
-          track.scrollLeft = touchStartScroll - walk;
-        });
-
-        // Set initial cursor
-        track.style.cursor = "grab";
-      });
-
-      // Optional: Hide arrows on small screens
-      function responsiveArrows() {
-        document.querySelectorAll(".carousel").forEach((car) => {
-          const arrows = car.querySelectorAll(".nav-arrow");
-          if (window.innerWidth < 768)
-            arrows.forEach((a) => (a.style.display = "none"));
-          else arrows.forEach((a) => (a.style.display = "flex"));
-        });
-      }
-      window.addEventListener("resize", responsiveArrows);
-      responsiveArrows();
-
-      // Play button functionality - Fullscreen video
-      document.getElementById("playBtn").addEventListener("click", async () => {
-        const video = document.getElementById("birthdayVideo");
-        
-        try {
-          // First play the video
-          await video.play();
-          
-          // Then request fullscreen
-          if (video.requestFullscreen) {
-            await video.requestFullscreen();
-          } else if (video.webkitRequestFullscreen) {
-            await video.webkitRequestFullscreen();
-          } else if (video.mozRequestFullScreen) {
-            await video.mozRequestFullScreen();
-          } else if (video.msRequestFullscreen) {
-            await video.msRequestFullscreen();
-          }
-        } catch (err) {
-          console.log("Fullscreen or play error:", err);
-          // Fallback: just play the video without fullscreen
-          try {
-            await video.play();
-          } catch (playErr) {
-            console.log("Play error:", playErr);
-          }
-        }
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
