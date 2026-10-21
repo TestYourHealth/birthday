@@ -155,7 +155,7 @@ textarea {
   inset: 0;
   background:
     linear-gradient(90deg, rgba(8, 11, 18, 0.96), rgba(8, 11, 18, 0.72) 44%, rgba(8, 11, 18, 0.25) 100%),
-    url("https://iili.io/KDr4mJV.jpg") center/cover no-repeat;
+    url("assets/doctor-hero.svg") center/cover no-repeat;
   transform: scale(1.04);
 }
 

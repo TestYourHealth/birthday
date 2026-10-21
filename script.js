@@ -5,7 +5,7 @@ const defaultConfig = {
   title: "A celebration of legacy, warmth & excellence",
   message:
     "Your leadership is a beacon of inspiration for everyone around you. May this new chapter be filled with health, happiness, purpose, and countless meaningful moments.",
-  image: "https://iili.io/KDr4mJV.jpg",
+  image: "assets/doctor-hero.svg",
 };
 
 const nameEl = document.getElementById("birthdayName");

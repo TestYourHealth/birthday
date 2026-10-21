@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Celebration banner</title>
+  <desc id="desc">A bright celebration banner with warm colors, confetti, and a happy birthday mood.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#201d36"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <circle cx="140" cy="130" r="50" fill="#f9d673" opacity="0.8"/>
+  <circle cx="1000" cy="180" r="60" fill="#f95d7f" opacity="0.75"/>
+  <circle cx="890" cy="710" r="70" fill="#7cd4ff" opacity="0.4"/>
+  <circle cx="260" cy="750" r="80" fill="#ffc75f" opacity="0.35"/>
+
+  <g fill="#fff" opacity="0.8">
+    <rect x="120" y="120" width="12" height="32" rx="6"/>
+    <rect x="920" y="120" width="12" height="40" rx="6"/>
+    <rect x="200" y="780" width="12" height="28" rx="6"/>
+    <rect x="976" y="770" width="12" height="32" rx="6"/>
+    <circle cx="700" cy="150" r="8"/>
+    <circle cx="340" cy="210" r="7"/>
+    <circle cx="880" cy="290" r="9"/>
+    <circle cx="260" cy="600" r="9"/>
+    <circle cx="1040" cy="620" r="8"/>
+  </g>
+
+  <rect x="285" y="230" width="630" height="440" rx="34" fill="#efefef" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.18"/>
+  <text x="600" y="430" text-anchor="middle" font-size="92" font-family="Verdana, sans-serif" fill="#f6f8fb" font-weight="700">Happy Birthday</text>
+  <text x="600" y="520" text-anchor="middle" font-size="54" font-family="Verdana, sans-serif" fill="#f9d673" font-weight="600">Dr. Anup Rastogi</text>
+  <text x="600" y="596" text-anchor="middle" font-size="28" font-family="Verdana, sans-serif" fill="#dfe8f5" letter-spacing="4">WITH LOVE &amp; GRATITUDE</text>
+</svg>

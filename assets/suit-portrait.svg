@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" role="img" aria-labelledby="title desc">
+  <title id="title">Celebration scene</title>
+  <desc id="desc">A warm party scene with a person in a dark suit smiling against a glowing backdrop.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#5b4d41"/>
+      <stop offset="100%" stop-color="#171d24"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1600" fill="url(#bg)"/>
+  <circle cx="570" cy="240" r="230" fill="#e5d7c2" opacity="0.18"/>
+  <rect x="120" y="1180" width="960" height="260" rx="38" fill="#0d141d" opacity="0.62"/>
+
+  <g transform="translate(180 120)">
+    <path d="M300 1180 L520 1180 L560 1380 L260 1380 Z" fill="#0e1620" opacity="0.6"/>
+
+    <path d="M350 440 L550 440 L610 1120 L290 1120 Z" fill="#f4f7fb"/>
+    <path d="M385 440 L522 440 L560 1120 L350 1120 Z" fill="#e9edf4"/>
+
+    <path d="M325 430 L560 430 Q610 430 650 490 L650 670 L240 670 L240 500 Q240 450 325 430 Z" fill="#1d2d46"/>
+    <path d="M315 430 L545 430 Q586 430 612 465 L612 600 L245 600 L245 480 Q245 450 315 430 Z" fill="#0c2037"/>
+
+    <ellipse cx="445" cy="420" rx="128" ry="162" fill="#efc2a1"/>
+    <path d="M330 430 Q445 295 562 430 L548 560 Q458 612 338 565 Z" fill="#6a6d78"/>
+    <path d="M355 415 Q442 355 532 418 L505 520 Q448 550 368 500 Z" fill="#3b4049"/>
+    <circle cx="405" cy="455" r="9" fill="#1b1d23"/>
+    <circle cx="488" cy="455" r="9" fill="#1b1d23"/>
+    <path d="M410 505 Q443 532 482 505" fill="none" stroke="#8a5f50" stroke-width="8" stroke-linecap="round"/>
+    <path d="M370 435 L325 510 L355 510 L398 455 Z" fill="#f6d8c4" opacity="0.9"/>
+    <path d="M520 435 L565 510 L534 510 L490 455 Z" fill="#f6d8c4" opacity="0.9"/>
+
+    <path d="M350 750 L242 930 L290 1008 L388 848 Z" fill="#eff5fb"/>
+    <path d="M546 750 L660 930 L608 1008 L510 848 Z" fill="#eff5fb"/>
+    <path d="M332 820 L468 805 L528 960 L415 1060 L300 1010 Z" fill="#f7d0b2" opacity="0.3"/>
+
+    <path d="M295 692 L360 770 L442 840 L330 900 L240 840 Z" fill="#ebf1f8"/>
+    <path d="M590 692 L525 770 L443 840 L555 900 L648 840 Z" fill="#ebf1f8"/>
+
+    <path d="M270 1060 L367 1055 L402 1370 L250 1370 Z" fill="#f4f7fb"/>
+    <path d="M530 1060 L435 1055 L400 1370 L552 1370 Z" fill="#f4f7fb"/>
+
+    <rect x="245" y="1185" width="120" height="320" rx="48" fill="#edf2fa"/>
+    <rect x="515" y="1185" width="120" height="320" rx="48" fill="#edf2fa"/>
+  </g>
+</svg>
